@@ -15,7 +15,6 @@ func _ready():
 	raycast.enabled = true
 	average_color = get_average_color(sprite.texture)
 	rng.randomize()
-	#start_jump_cycle()
 	
 func get_average_color(texture: Texture) -> Color:
 	var image = texture.get_data()
@@ -26,20 +25,24 @@ func get_average_color(texture: Texture) -> Color:
 
 	for x in range(image.get_width()):
 		for y in range(image.get_height()):
-			total_color += image.get_pixel(x, y)
-			pixel_count += 1
+			var pixel = image.get_pixel(x, y)
+			# Solo contar píxeles visibles
+			if pixel.a > 0.0:
+				total_color += pixel
+				pixel_count += 1
 
 	image.unlock()
 
 	if pixel_count > 0:
 		var avg_color = total_color / pixel_count
-		avg_color.a = 1.0  # 🔥 Forzar opacidad al 100%
+		# Mantener opacidad al 100%
+		avg_color.a = 1.0  
 		return avg_color
-	return Color(1, 1, 1, 1)
-	
+	# Color por defecto si todos los píxeles eran transparentes
+	return Color(1, 1, 1, 1) 
+
 	
 func set_texture(texture: Texture):
-#	sprite.texture = texture
 	var sprite = get_node("spr_player2")
 	if sprite:
 		sprite.texture = texture

@@ -18,3 +18,4 @@ func spawn_player(position: Vector2, texture: Texture):
 	add_child(player)
 	player.set_texture(texture) # Asigna la textura antes de añadirlo a la escena
 	player.make_trail()
+	player.add_to_group("players")
