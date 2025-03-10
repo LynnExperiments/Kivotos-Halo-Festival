@@ -21,8 +21,8 @@ func add_trail_point(pos, color):
 	trail_image.lock()
 
 	# Dibujar un pequeño punto en la imagen
-	for dx in range(-2, 3):
-		for dy in range(-2, 3):
+	for dx in range(-2, 1):
+		for dy in range(-2, 1):
 			if x + dx >= 0 and x + dx < 2028 and y + dy >= 0 and y + dy < 900:
 				trail_image.set_pixel(x + dx, y + dy, color)
 
