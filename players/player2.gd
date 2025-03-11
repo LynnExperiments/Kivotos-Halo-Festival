@@ -87,7 +87,6 @@ func wait_and_jump():
 	is_jumping = true
 	wait_time = get_random_number_float(0.50, 3.00)
 	yield(get_tree().create_timer(wait_time), "timeout")
-	print("&")
 	jump_force = Vector2(get_random_number_int(-50, 350),get_random_number_int(-50,-400))
 	apply_impulse(Vector2.ZERO, jump_force)
 	is_jumping = false
