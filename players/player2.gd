@@ -99,5 +99,5 @@ func _on_Area2D_area_entered(area):
 func _on_Area2D_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if is_jumping:
 		return
-	if body is TileMap:
+	if body is TileMap or body.get_parent().name == "start_platforms":
 		wait_and_jump()

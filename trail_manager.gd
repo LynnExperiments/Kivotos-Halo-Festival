@@ -6,7 +6,7 @@ var trail_image: Image
 func _ready():
 	# Crear una imagen vacía del tamaño de la pantalla
 	trail_image = Image.new()
-	trail_image.create(2028, 900, false, Image.FORMAT_RGBA8)
+	trail_image.create(2028, 1200, false, Image.FORMAT_RGBA8)
 	trail_image.fill(Color(0, 0, 0, 0))  # Fondo transparente
 
 	trail_texture = ImageTexture.new()
@@ -21,9 +21,9 @@ func add_trail_point(pos, color):
 	trail_image.lock()
 
 	# Dibujar un pequeño punto en la imagen
-	for dx in range(-2, 1):
-		for dy in range(-2, 1):
-			if x + dx >= 0 and x + dx < 2028 and y + dy >= 0 and y + dy < 900:
+	for dx in range(-2, 0):
+		for dy in range(-2, 0):
+			if x + dx >= 0 and x + dx < 2028 and y + dy >= 0 and y + dy < 1200:
 				trail_image.set_pixel(x + dx, y + dy, color)
 
 	# Desbloquear la imagen después de modificarla

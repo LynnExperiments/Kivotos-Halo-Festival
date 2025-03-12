@@ -6,6 +6,7 @@
 extents = Vector2( 266.5, 12.5 )
 
 [node name="top_and_bottom" type="Node2D"]
+position = Vector2( 8, -448 )
 
 [node name="b_top" type="StaticBody2D" parent="."]
 position = Vector2( 0, 24 )
@@ -22,7 +23,7 @@ position = Vector2( 258.5, 436 )
 shape = SubResource( 3 )
 
 [node name="b_bottom" type="StaticBody2D" parent="."]
-position = Vector2( 0, 450 )
+position = Vector2( 0, 580 )
 
 [node name="txt_b_bottom" type="TextureRect" parent="b_bottom"]
 margin_left = -8.0

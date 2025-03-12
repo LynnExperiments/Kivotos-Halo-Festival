@@ -1,6 +1,13 @@
 extends Node2D
 
 const PLAYER_SCENE = preload("res://players/player2.tscn") # Carga la escena del jugador
+var spawnPositions = {
+	"1x1": Vector2(43,495),
+	"2x1": Vector2(43,570),
+	"3x1": Vector2(43,634),
+	"4x1": Vector2(43,670),
+	"5x1": Vector2(43,732),
+}
 var abydosTextures = {
 	"Shiroko": preload("res://players/textures/abydos/shiroko.png"),
 	"Hoshino": preload("res://players/textures/abydos/hoshino.png"),
@@ -10,11 +17,17 @@ var abydosTextures = {
 }
 
 func spawn_abydos_school():
-	spawn_player(Vector2(25, 850), abydosTextures["Shiroko"])
-	spawn_player(Vector2(25, 630), abydosTextures["Hoshino"])
-	spawn_player(Vector2(25, 535), abydosTextures["Serika"])
-	spawn_player(Vector2(130, 850), abydosTextures["Nonomi"])
-	spawn_player(Vector2(130, 630), abydosTextures["Ayane"])
+	spawn_player(Vector2(43, 495), abydosTextures["Serika"])
+	spawn_player(Vector2(43, 547), abydosTextures["Hoshino"])
+	spawn_player(Vector2(43, 593), abydosTextures["Shiroko"])
+	spawn_player(Vector2(43, 643), abydosTextures["Nonomi"])
+	spawn_player(Vector2(43, 691), abydosTextures["Ayane"])
+	spawn_player(Vector2(43, 739), abydosTextures["Serika"])
+	spawn_player(Vector2(43, 786), abydosTextures["Hoshino"])
+	spawn_player(Vector2(43, 835), abydosTextures["Shiroko"])
+	spawn_player(Vector2(43, 880), abydosTextures["Nonomi"])
+	spawn_player(Vector2(43, 928), abydosTextures["Ayane"])
+	spawn_player(Vector2(43, 978), abydosTextures["Ayane"])
 
 func _ready():
 	# Abydos
