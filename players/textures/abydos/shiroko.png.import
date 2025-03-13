@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shiroko.png-827200d13c1d6cda0b57a5549cfa62d5.stex"
+path="res://.import/Shiroko.png-30366c1a1807e90975f072524d1a28f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://players/textures/abydos/shiroko.png"
-dest_files=[ "res://.import/shiroko.png-827200d13c1d6cda0b57a5549cfa62d5.stex" ]
+source_file="res://players/textures/abydos/Shiroko.png"
+dest_files=[ "res://.import/Shiroko.png-30366c1a1807e90975f072524d1a28f0.stex" ]
 
 [params]
 

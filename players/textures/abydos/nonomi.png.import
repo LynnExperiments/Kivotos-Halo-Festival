@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/nonomi.png-67867eacb3fa1e2b6bebfb02ef516f61.stex"
+path="res://.import/Nonomi.png-98bbe2e02c2487099f6a7dc6bdb51ec7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://players/textures/abydos/nonomi.png"
-dest_files=[ "res://.import/nonomi.png-67867eacb3fa1e2b6bebfb02ef516f61.stex" ]
+source_file="res://players/textures/abydos/Nonomi.png"
+dest_files=[ "res://.import/Nonomi.png-98bbe2e02c2487099f6a7dc6bdb51ec7.stex" ]
 
 [params]
 

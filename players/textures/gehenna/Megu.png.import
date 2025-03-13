@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Serika.png-21c96649b8c7346f74a000e65adadfca.stex"
+path="res://.import/Megu.png-8913eb950aa82d8882848ca8e837f77a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://players/textures/abydos/Serika.png"
-dest_files=[ "res://.import/Serika.png-21c96649b8c7346f74a000e65adadfca.stex" ]
+source_file="res://players/textures/gehenna/Megu.png"
+dest_files=[ "res://.import/Megu.png-8913eb950aa82d8882848ca8e837f77a.stex" ]
 
 [params]
 

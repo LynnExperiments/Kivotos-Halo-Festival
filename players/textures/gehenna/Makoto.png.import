@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Serika.png-21c96649b8c7346f74a000e65adadfca.stex"
+path="res://.import/Makoto.png-dd10bf7b342ed20c6349470ad6f60593.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://players/textures/abydos/Serika.png"
-dest_files=[ "res://.import/Serika.png-21c96649b8c7346f74a000e65adadfca.stex" ]
+source_file="res://players/textures/gehenna/Makoto.png"
+dest_files=[ "res://.import/Makoto.png-dd10bf7b342ed20c6349470ad6f60593.stex" ]
 
 [params]
 

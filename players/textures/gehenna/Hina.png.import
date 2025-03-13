@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Serika.png-21c96649b8c7346f74a000e65adadfca.stex"
+path="res://.import/Hina.png-1a7ca1f525477c8106668805419c1135.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://players/textures/abydos/Serika.png"
-dest_files=[ "res://.import/Serika.png-21c96649b8c7346f74a000e65adadfca.stex" ]
+source_file="res://players/textures/gehenna/Hina.png"
+dest_files=[ "res://.import/Hina.png-1a7ca1f525477c8106668805419c1135.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Serika.png-21c96649b8c7346f74a000e65adadfca.stex"
+path="res://.import/Iori.png-da54f16be6fd477ad25da0711a472e65.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://players/textures/abydos/Serika.png"
-dest_files=[ "res://.import/Serika.png-21c96649b8c7346f74a000e65adadfca.stex" ]
+source_file="res://players/textures/gehenna/Iori.png"
+dest_files=[ "res://.import/Iori.png-da54f16be6fd477ad25da0711a472e65.stex" ]
 
 [params]
 

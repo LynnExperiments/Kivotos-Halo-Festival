@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Serika.png-21c96649b8c7346f74a000e65adadfca.stex"
+path="res://.import/Chinatsu.png-f74ff34ddaef90556a6aea42dee1dbc6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://players/textures/abydos/Serika.png"
-dest_files=[ "res://.import/Serika.png-21c96649b8c7346f74a000e65adadfca.stex" ]
+source_file="res://players/textures/gehenna/Chinatsu.png"
+dest_files=[ "res://.import/Chinatsu.png-f74ff34ddaef90556a6aea42dee1dbc6.stex" ]
 
 [params]
 

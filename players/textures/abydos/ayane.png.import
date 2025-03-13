@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ayane.png-6bed550710f1e5e2c6c9c1e74748e8a4.stex"
+path="res://.import/Ayane.png-1ad349647b83924dae9819e934ee4cef.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://players/textures/abydos/ayane.png"
-dest_files=[ "res://.import/ayane.png-6bed550710f1e5e2c6c9c1e74748e8a4.stex" ]
+source_file="res://players/textures/abydos/Ayane.png"
+dest_files=[ "res://.import/Ayane.png-1ad349647b83924dae9819e934ee4cef.stex" ]
 
 [params]
 
