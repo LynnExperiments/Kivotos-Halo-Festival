@@ -1,7 +1,10 @@
 extends Node2D
 
 var ABYDOS_STUDENTS = ["Serika", "Hoshino", "Shiroko", "Nonomi", "Ayane"]
-var GEHENNA_STUDENTS = ["Hina", "Satsuki", "Iori"] #@TODO completar
+var GEHENNA_STUDENTS = ["Makoto", "Satsuki", "Chiaki", "Iroha", "Ibuki", 
+"Hina", "Ako", "Iori", "Chinatsu", "Aru", "Mutsuki", "Kayoko", "Haruka", 
+"Haruna", "Junko", "Izumi", "Akari", "Fuuka", "Juri", "Sena", "Kasumi", 
+"Megu", "Kirara", "Erika"]
 
 const PLAYER_SCENE = preload("res://players/player2.tscn")
 
@@ -51,9 +54,7 @@ var startSpawnsQty = {
 func getOneSchoolTextures(studentList: Array, school: String):
 	var textures = {}
 	for i in studentList.size():
-		# @TODO remove ´load´ and only keep strings
-		textures[studentList[i]] = load("res://players/textures/" + school + "/" + studentList[i] + ".png")
-	print(textures)
+		textures[studentList[i]] = "res://players/textures/" + school + "/" + studentList[i] + ".png"
 	return textures
 
 func getTextures(studentsList: Array, texturesList: Array):
@@ -62,33 +63,20 @@ func getTextures(studentsList: Array, texturesList: Array):
 		for j in texturesList.size():
 			if texturesList[j].has(studentsList[i]):
 				textures[studentsList[i]] = texturesList[j][studentsList[i]]
-	print('result: ',textures)
 	return textures
 
 #func spawn_abydos_school():
 #	for i in ABYDOS_STUDENTS.size():
 #		spawn_player(startSpawnsQty[ABYDOS_STUDENTS.size()][i], abydosTextures[ABYDOS_STUDENTS[i]])
-	
-#	spawn_player(spawnPositions[0], abydosTextures["Serika"])
-#	spawn_player(spawnPositions[1], abydosTextures["Hoshino"])
-#	spawn_player(spawnPositions[2], abydosTextures["Shiroko"])
-#	spawn_player(spawnPositions[3], abydosTextures["Nonomi"])
-#	spawn_player(spawnPositions[4], abydosTextures["Ayane"])
-#	spawn_player(spawnPositions[5], abydosTextures["Serika"])
-#	spawn_player(spawnPositions[6], abydosTextures["Hoshino"])
-#	spawn_player(spawnPositions[7], abydosTextures["Shiroko"])
-#	spawn_player(spawnPositions[8], abydosTextures["Nonomi"])
-#	spawn_player(spawnPositions[9], abydosTextures["Ayane"])
-#	spawn_player(spawnPositions[10], abydosTextures["Ayane"])
 
 func spawn_custom(studentList: Array, textureList: Dictionary):
 	for i in studentList.size():
-		spawn_player(startSpawnsQty[studentList.size()][i], textureList[studentList[i]])
-			# @TODO add ´load´ to the string on 2nd parameter
+		spawn_player(startSpawnsQty[studentList.size()][i], load(textureList[studentList[i]]))
 
 func _ready():
 	# Abydos
 	#spawn_abydos_school()
+	
 	#var abydosTextures = getOneSchoolTextures(ABYDOS_STUDENTS, "abydos")
 	#spawn_custom(ABYDOS_STUDENTS, abydosTextures)
 	
@@ -100,7 +88,6 @@ func _ready():
 	var xgehennaTextures = getOneSchoolTextures(GEHENNA_STUDENTS, "gehenna")
 	var allTextures = [xabydosTextures, xgehennaTextures]
 	var textures = getTextures(studentsList, allTextures)
-
 	
 	# Generic
 	spawn_custom(studentsList, textures)
@@ -115,6 +102,6 @@ func spawn_player(position: Vector2, texture: Texture):
 	var player = PLAYER_SCENE.instance()
 	player.position = position
 	add_child(player)
-	player.set_texture(texture) # Asigna la textura antes de añadirlo a la escena
+	player.set_texture(texture) # Assign texture before adding player to the scene
 	player.make_trail()
 	player.add_to_group("players")
