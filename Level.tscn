@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://trail_manager.gd" type="Script" id=1]
 [ext_resource path="res://environment/borders/b_left.tscn" type="PackedScene" id=2]
@@ -9,26 +9,7 @@
 [ext_resource path="res://environment/tileset/TileMap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Level.gd" type="Script" id=8]
 [ext_resource path="res://Camera2D.gd" type="Script" id=9]
-[ext_resource path="res://environment/tileset/Terrain (16x16).png" type="Texture" id=10]
-
-[sub_resource type="TileSet" id=1]
-0/name = "Terrain (16x16).png 0"
-0/texture = ExtResource( 10 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 272, 32, 48, 5 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 24, 2 )
+[ext_resource path="res://environment/tileset/start_platform_scenes/start_platforms.tscn" type="PackedScene" id=10]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 8 )
@@ -82,64 +63,6 @@ position = Vector2( 1504, 0 )
 cell_size = Vector2( 16, 16 )
 tile_data = PoolIntArray( 2555966, 0, 0, 2555967, 0, 0, 2621459, 0, 0, 2621460, 0, 0, 2621461, 0, 0, 2621469, 0, 0, 2621470, 0, 0, 2621471, 0, 0, 2621483, 0, 0, 2621484, 0, 0, 2621485, 0, 0, 2752597, 3, 0, 3014677, 0, 0, 3014681, 0, 0, 3014682, 0, 0, 3014683, 0, 0, 3014684, 0, 0, 3014689, 3, 0, 3080213, 2, 0, 3080217, 2, 0, 3080218, 2, 0, 3080219, 2, 0, 3080220, 2, 0, 3080241, 0, 0, 3080244, 3, 0, 3080283, 3, 0, 3145747, 0, 0, 3145763, 3, 0, 3145774, 0, 0, 3145777, 1, 0, 3145790, 3, 0, 3211280, 0, 0, 3211283, 1, 0, 3211310, 1, 0, 3211313, 1, 0, 3276816, 2, 0, 3276819, 2, 0, 3276843, 0, 0, 3276846, 1, 0, 3276849, 1, 0, 3276903, 0, 0, 3276916, 0, 0, 3342379, 1, 0, 3342382, 1, 0, 3342385, 1, 0, 3342436, 0, 0, 3342439, 1, 0, 3342443, 0, 0, 3342452, 2, 0, 3407915, 1, 0, 3407918, 1, 0, 3407921, 1, 0, 3407968, 3, 0, 3407972, 2, 0, 3407975, 2, 0, 3407979, 2, 0, 3473451, 1, 0, 3473454, 1, 0, 3473457, 1, 0, 3473466, 3, 0, 3473468, 3, 0, 3538987, 2, 0, 3538990, 2, 0, 3538993, 2, 0, 3670132, 0, 0, 3735668, 1, 0, 3801162, 4, 0, 3801168, 4, 0, 3801204, 1, 0, 3866668, 4, 0, 3866695, 4, 0, 3866707, 4, 0, 3866720, 2, 0, 3866740, 1, 0, 3932228, 4, 0, 3932246, 4, 0, 3932276, 2, 0, 3997735, 4, 0, 3997761, 4, 0, 3997785, 4, 0 )
 
-[node name="start_platforms" type="TileMap" parent="."]
-tile_set = SubResource( 1 )
-cell_size = Vector2( 8, 8 )
-format = 1
-tile_data = PoolIntArray( 4259842, 0, 0, 4653058, 0, 0, 5046274, 0, 0, 5439490, 0, 0, 5832706, 0, 0, 6225922, 0, 0, 6619138, 0, 0, 7012354, 0, 0, 7405570, 0, 0, 7798786, 0, 0 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="start_platforms"]
-
-[node name="left1_CollisionShape2D" type="CollisionShape2D" parent="start_platforms/StaticBody2D"]
-position = Vector2( 41, 523 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="left2_CollisionShape2D2" type="CollisionShape2D" parent="start_platforms/StaticBody2D"]
-position = Vector2( 41, 571 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="left3_CollisionShape2D3" type="CollisionShape2D" parent="start_platforms/StaticBody2D"]
-position = Vector2( 41, 619 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="left4_CollisionShape2D4" type="CollisionShape2D" parent="start_platforms/StaticBody2D"]
-position = Vector2( 41, 667 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="left5_CollisionShape2D5" type="CollisionShape2D" parent="start_platforms/StaticBody2D"]
-position = Vector2( 40, 715 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="left6_CollisionShape2D6" type="CollisionShape2D" parent="start_platforms/StaticBody2D"]
-position = Vector2( 41, 763 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="right1_CollisionShape2D12" type="CollisionShape2D" parent="start_platforms/StaticBody2D"]
-position = Vector2( 41, 811 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="right2_CollisionShape2D11" type="CollisionShape2D" parent="start_platforms/StaticBody2D"]
-position = Vector2( 41, 858 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="right3_CollisionShape2D10" type="CollisionShape2D" parent="start_platforms/StaticBody2D"]
-position = Vector2( 41, 907 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="right3_CollisionShape2D11" type="CollisionShape2D" parent="start_platforms/StaticBody2D"]
-position = Vector2( 41, 955 )
-shape = SubResource( 2 )
-one_way_collision = true
-
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
 
@@ -151,3 +74,5 @@ limit_top = 450
 limit_right = 2028
 limit_bottom = 900
 script = ExtResource( 9 )
+
+[node name="start_platforms" parent="." instance=ExtResource( 10 )]

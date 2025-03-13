@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://environment/tileset/11_players_tileset.tres" type="TileSet" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 2 )
+
+[node name="start_platforms" type="TileMap"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 4259842, 0, 0, 4653058, 0, 0, 5046274, 0, 0, 5439490, 0, 0, 5832706, 0, 0, 6225922, 0, 0, 6619138, 0, 0, 7012354, 0, 0, 7405570, 0, 0, 7798786, 0, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="left1_CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 523 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="left2_CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 571 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="left3_CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 619 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="left4_CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 667 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="left5_CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 40, 715 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="left6_CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 763 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="right1_CollisionShape2D12" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 811 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="right2_CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 858 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="right3_CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 907 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="right3_CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 955 )
+shape = SubResource( 2 )
+one_way_collision = true

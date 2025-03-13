@@ -3,7 +3,7 @@ extends Camera2D
 func _process(delta):
 	var players = get_tree().get_nodes_in_group("players")  # 🔥 Obtener jugadores en cada frame
 	if players.size() == 0:
-		print("out")
+		#print("out")
 		return  # Si no hay jugadores, no hacemos nada
 
 	var leader = players[0]  # Inicializamos con el primer jugador

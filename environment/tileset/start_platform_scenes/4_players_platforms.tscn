@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://environment/tileset/Terrain (16x16).png" type="Texture" id=1]
+
+[sub_resource type="TileSet" id=3]
+0/name = "Terrain (16x16).png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 272, 32, 48, 5 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 2 )
+
+[node name="start_platforms" type="TileMap"]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 4653058, 0, 0, 5439490, 0, 0, 6225922, 0, 0, 7012354, 0, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="left2_CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 571 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="left4_CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 667 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="left6_CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 763 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="right2_CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 41, 858 )
+shape = SubResource( 2 )
+one_way_collision = true
