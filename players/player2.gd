@@ -15,7 +15,7 @@ func _ready():
 	raycast.enabled = true
 	average_color = get_average_color(sprite.texture)
 	rng.randomize()
-	
+
 func get_average_color(texture: Texture) -> Color:
 	var image = texture.get_data()
 	image.lock()
@@ -41,7 +41,7 @@ func get_average_color(texture: Texture) -> Color:
 	# White color by default
 	return Color(1, 1, 1, 1) 
 
-	
+
 func set_texture(texture: Texture):
 	var sprite = get_node("spr_player2")
 	if sprite:
@@ -58,7 +58,7 @@ func make_trail():
 func get_random_number_int(min_val: int, max_val: int) -> int:
 	var result = rng.randi_range(min_val, max_val)
 	return result
-	
+
 func get_random_number_float(min_val: float, max_val: float) -> float:
 	var result = rng.randf_range(min_val, max_val)
 	return result
