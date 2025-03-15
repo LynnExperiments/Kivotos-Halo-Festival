@@ -7,6 +7,8 @@ var GEHENNA_STUDENTS = ["Makoto", "Satsuki", "Chiaki", "Iroha", "Ibuki",
 "Megu", "Kirara", "Erika"]
 
 const PLAYER_SCENE = preload("res://players/player2.tscn")
+const LEFT_BORDER = preload("res://environment/borders/b_left.tscn")
+const TOP_BOTTOM_BORDERS = preload("res://environment/borders/top_and_bottom.tscn")
 
 var spawnPositions = [
 	Vector2(43, 495),
@@ -65,6 +67,29 @@ func getTextures(studentsList: Array, texturesList: Array):
 				textures[studentsList[i]] = texturesList[j][studentsList[i]]
 	return textures
 
+func getBorders(school: String):
+	var vertical_source = ""
+	var horizontal_source = ""
+	if(school):
+		vertical_source = load("res://environment/borders/schools_textures/" + school + "/vertical.png")
+		horizontal_source = load("res://environment/borders/schools_textures/" + school + "/horizontal.png")
+	else:
+		vertical_source = load("res://environment/borders/whiteTexture_big.png")
+		horizontal_source = load("res://environment/borders/whiteTexture_horizontal.png")
+	# Left border
+	var left_border = LEFT_BORDER.instance()
+	left_border.position = Vector2(0, 127)
+	add_child(left_border)
+	left_border.get_node("txt_b_left").set_texture(vertical_source)
+	# Top and Bottom borders
+	for i in 4:
+		var top_bottom_borders = TOP_BOTTOM_BORDERS.instance()
+		top_bottom_borders.position = Vector2(i*528,0)
+		add_child(top_bottom_borders)
+		top_bottom_borders.get_node("b_top/txt_b_top").set_texture(horizontal_source)
+		top_bottom_borders.get_node("b_bottom/txt_b_bottom").set_texture(horizontal_source)
+	
+
 #func spawn_abydos_school():
 #	for i in ABYDOS_STUDENTS.size():
 #		spawn_player(startSpawnsQty[ABYDOS_STUDENTS.size()][i], abydosTextures[ABYDOS_STUDENTS[i]])
@@ -82,7 +107,9 @@ func _ready():
 	
 	# Change accordingly
 	var studentsList = ["Serika", "Hoshino", "Shiroko", "Nonomi", "Ayane", "Hina", "Satsuki", "Iori"]
-	#var school = "abydos"
+	var school = "gehenna"
+	
+	getBorders(school)
 	
 	var xabydosTextures = getOneSchoolTextures(ABYDOS_STUDENTS, "abydos")
 	var xgehennaTextures = getOneSchoolTextures(GEHENNA_STUDENTS, "gehenna")
