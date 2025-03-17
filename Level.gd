@@ -6,11 +6,6 @@ var GEHENNA_STUDENTS = ["Makoto", "Satsuki", "Chiaki", "Iroha", "Ibuki",
 "Haruna", "Junko", "Izumi", "Akari", "Fuuka", "Juri", "Sena", "Kasumi", 
 "Megu", "Kirara", "Erika"]
 
-#onready var minimap_camera = $ViewportContainer/Viewport/MinimapCamera
-#onready var viewport = $ViewportContainer/Viewport
-#onready var texture_rect = $UI/TextureRect
-#onready var world_source = get_tree().current_scene
-
 const PLAYER_SCENE = preload("res://players/player2.tscn")
 const LEFT_BORDER = preload("res://environment/borders/b_left.tscn")
 const TOP_BOTTOM_BORDERS = preload("res://environment/borders/top_and_bottom.tscn")
@@ -97,7 +92,6 @@ func getBorders(school: String):
 		add_child(top_bottom_borders)
 		top_bottom_borders.get_node("b_top/txt_b_top").set_texture(horizontal_source)
 		top_bottom_borders.get_node("b_bottom/txt_b_bottom").set_texture(horizontal_source)
-	
 
 #func spawn_abydos_school():
 #	for i in ABYDOS_STUDENTS.size():
@@ -115,7 +109,7 @@ func _ready():
 	#spawn_custom(ABYDOS_STUDENTS, abydosTextures)
 	
 	# Change accordingly
-	var studentsList = ["Serika", "Hoshino"] #, "Shiroko", "Nonomi", "Ayane", "Hina", "Satsuki", "Iori"
+	var studentsList = ["Serika", "Hoshino", "Shiroko", "Nonomi", "Ayane", "Hina", "Satsuki", "Iori"] #
 	var school = "abydos"
 	
 	getBorders(school)
@@ -132,33 +126,6 @@ func _ready():
 	# Load coresponding starter platforms depending on "players" group size
 	var platforms = load(startPlatforms[position]).instance()
 	add_child(platforms)
-	
-	# Obtener el World2D desde la raíz de la escena actual
-	#print(get_tree().root.get_child(0).world_2d)
-	#var world = get_tree().root.get_child(0).world_2d
-	#viewport.world_2d = world
-	
-	#####
-	#var viewport_container = $ViewportContainer
-	#var viewport = $ViewportContainer/Viewport
-	#var minimap_camera = $ViewportContainer/Viewport/MinimapCamera
-
-	#$ViewportContainer/Viewport.render_target_v_flip = true
-	#$ViewportContainer/Viewport.size = Vector2(400, 200)
-	#minimap_camera.zoom = Vector2(0.1, 0.1)
-	#minimap_camera.current = true
-	#var remote_transform = RemoteTransform2D.new()
-	#remote_transform.remote_path = minimap_camera.get_path()
-	#add_child(remote_transform)
-	#####
-	
-	#minimap_camera.position = get_level_center()
-	#viewport.render_target_update_mode = Viewport.UPDATE_ALWAYS
-	#yield(get_tree(), "idle_frame")
-	#minimap_camera.position = Vector2(284,792)
-	#minimap_camera.zoom = Vector2(-0.2, -0.2)  
-	#texture_rect.texture = viewport.get_texture()
-	#viewport.size = Vector2(1024, 512)
 	
 
 func spawn_player(position: Vector2, texture: Texture):

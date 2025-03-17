@@ -8,8 +8,6 @@ onready var player_marker = $MarginContainer/Grid/PlayerMarker
 onready var mob_marker = $MarginContainer/Grid/MobMarker
 onready var alert_marker = $MarginContainer/Grid/AlertMarker
 
-onready var icons = {"mob": mob_marker, "alert": alert_marker}
-
 var grid_scale
 var markers = {}
 
@@ -21,8 +19,6 @@ func _set_player_marker_position():
 func _ready():
 	yield(get_tree(), "idle_frame")
 	call_deferred("_set_player_marker_position")
-	#print(grid)
-	#player_marker.position = grid.rect_size / 2
 	
 	var map_objects = get_tree().get_nodes_in_group("minimap_objects")
 	for item in map_objects:

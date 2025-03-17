@@ -11,8 +11,6 @@ var jump_force = Vector2(0, 0)
 var wait_time = 0.0
 var average_color = Color(1, 1, 1, 1)
 
-var minimap_icon = "mob" #sprite.texture #resize
-
 func _ready():
 	raycast.enabled = true
 	average_color = get_average_color(sprite.texture)
@@ -45,7 +43,6 @@ func get_average_color(texture: Texture) -> Color:
 
 
 func set_texture(texture: Texture):
-	var sprite = get_node("spr_player2")
 	if sprite:
 		sprite.texture = texture
 
@@ -70,7 +67,7 @@ func start_jump_cycle():
 		wait_time = get_random_number_float(1.00, 3.00)
 		yield(get_tree().create_timer(wait_time), "timeout")
 
-func _process(delta):
+func _process(_delta):
 	var trail_manager = get_parent().get_node("trail_manager") if get_parent().has_node("trail_manager") else null
 	if trail_manager:
 		trail_manager.add_trail_point(global_position, average_color)
@@ -84,7 +81,7 @@ func wait_and_jump():
 	is_jumping = false
 
 # Jump if on floor or another player
-func _on_Area2D_area_entered(area):
+func _on_Area2D_area_entered(_area):
 	if is_jumping:
 		return
 	wait_and_jump()
