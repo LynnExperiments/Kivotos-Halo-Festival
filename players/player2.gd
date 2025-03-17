@@ -11,6 +11,8 @@ var jump_force = Vector2(0, 0)
 var wait_time = 0.0
 var average_color = Color(1, 1, 1, 1)
 
+var minimap_icon = "mob" #sprite.texture #resize
+
 func _ready():
 	raycast.enabled = true
 	average_color = get_average_color(sprite.texture)
@@ -88,7 +90,7 @@ func _on_Area2D_area_entered(area):
 	wait_and_jump()
 
 # Jump if on platforms
-func _on_Area2D_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+func _on_Area2D_body_shape_entered(_body_rid, body, _body_shape_index, _local_shape_index):
 	if is_jumping:
 		return
 	if body is TileMap or body.get_parent().name == "start_platforms":
