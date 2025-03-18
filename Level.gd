@@ -5,6 +5,14 @@ var GEHENNA_STUDENTS = ["Makoto", "Satsuki", "Chiaki", "Iroha", "Ibuki",
 "Hina", "Ako", "Iori", "Chinatsu", "Aru", "Mutsuki", "Kayoko", "Haruka", 
 "Haruna", "Junko", "Izumi", "Akari", "Fuuka", "Juri", "Sena", "Kasumi", 
 "Megu", "Kirara", "Erika"]
+var MILLENIUM_STUDENTS = ["Rio", "Yuuka", "Noa", "Koyuki", "Chihiro", "Maki", 
+"Hare", "Kotama", "Neru", "Karin", "Akane", "Asuna", "Toki", "Hibiki", "Utaha", 
+"Kotori", "Sumire", "Himari", "Eimi", "Aris", "Yuzu", "Midori", "Momoi", "Rei"]
+var VALKYRIE_STUDENTS = ["Kanna", "Kirino", "Fubuki", "Konoka"]
+var TRINITY_STUDENTS = ["Nagisa", "Seia", "Mika", "Kazusa", "Natsu", "Airi", 
+"Yoshimi", "Reisa", "Suzumi", "Tsurugi", "Hasumi", "Mashiro", "Ichika", "Mine", 
+"Hanae", "Serina", "Hifumi", "Azusa", "Koharu", "Hanako", "Ui", "Shimiko",
+ "Sakurako", "Mari", "Hinata"]
 
 const PLAYER_SCENE = preload("res://players/player2.tscn")
 const LEFT_BORDER = preload("res://environment/borders/b_left.tscn")
@@ -44,14 +52,6 @@ var startSpawnsQty = {
 	9: [spawnPositions[0],spawnPositions[1],spawnPositions[2],spawnPositions[3],spawnPositions[4],spawnPositions[5],spawnPositions[6],spawnPositions[7],spawnPositions[8]],
 	10:[spawnPositions[0],spawnPositions[1],spawnPositions[2],spawnPositions[3],spawnPositions[4],spawnPositions[5],spawnPositions[6],spawnPositions[7],spawnPositions[8],spawnPositions[9]],
 }
-
-#var abydosTextures = {
-#	"Shiroko": preload("res://players/textures/abydos/Shiroko.png"),
-#	"Hoshino": preload("res://players/textures/abydos/Hoshino.png"),
-#	"Serika": preload("res://players/textures/abydos/Serika.png"),
-#	"Nonomi": preload("res://players/textures/abydos/Nonomi.png"),
-#	"Ayane": preload("res://players/textures/abydos/Ayane.png"),
-#}
 
 func get_level_center():
 	var level_rect = $tilemap.get_used_rect()
@@ -93,10 +93,6 @@ func getBorders(school: String):
 		top_bottom_borders.get_node("b_top/txt_b_top").set_texture(horizontal_source)
 		top_bottom_borders.get_node("b_bottom/txt_b_bottom").set_texture(horizontal_source)
 
-#func spawn_abydos_school():
-#	for i in ABYDOS_STUDENTS.size():
-#		spawn_player(startSpawnsQty[ABYDOS_STUDENTS.size()][i], abydosTextures[ABYDOS_STUDENTS[i]])
-
 func spawn_custom(studentList: Array, textureList: Dictionary):
 	for i in studentList.size():
 		spawn_player(startSpawnsQty[studentList.size()][i], load(textureList[studentList[i]]))
@@ -104,26 +100,46 @@ func spawn_custom(studentList: Array, textureList: Dictionary):
 func _ready():
 	var abydosTextures = getOneSchoolTextures(ABYDOS_STUDENTS, "abydos")
 	var gehennaTextures = getOneSchoolTextures(GEHENNA_STUDENTS, "gehenna")
-	var _allTextures = [abydosTextures, gehennaTextures]
+	var milleniumTextures = getOneSchoolTextures(MILLENIUM_STUDENTS, "millenium")
+	var valkyrieTextures = getOneSchoolTextures(VALKYRIE_STUDENTS, "valkyrie")
+	var trinityTextures = getOneSchoolTextures(TRINITY_STUDENTS, "trinity")
+	var _allTextures = [abydosTextures, gehennaTextures, milleniumTextures, 
+	valkyrieTextures, trinityTextures]
 	
-	# Abydos
-	#spawn_abydos_school()
-	
-	# Abydos
+	# Abydos - 5
 	#var school = "abydos"
 	#spawn_custom(ABYDOS_STUDENTS, abydosTextures)
 	
-	# this only works for schools with little students like:
-	# abydos - valkyrie - arius - shanhaijing - srt
+	# Gehenna - 24
+#	var school = "gehenna"
+#	randomize()
+#	GEHENNA_STUDENTS.shuffle()
+#	print(GEHENNA_STUDENTS.slice(0,7),"\n",GEHENNA_STUDENTS.slice(8,15),"\n",GEHENNA_STUDENTS.slice(16,23))
+#	# write down the result
+#	var studentDivision = GEHENNA_STUDENTS.slice(0,7)
+#	spawn_custom(studentDivision, gehennaTextures)
 	
-	# Gehenna
-	var school = "gehenna"
+	# Millenium - 24
+#	var school = "millenium"
+#	randomize()
+#	MILLENIUM_STUDENTS.shuffle()
+#	print(MILLENIUM_STUDENTS.slice(0,7),"\n",MILLENIUM_STUDENTS.slice(8,15),"\n",MILLENIUM_STUDENTS.slice(16,23))
+#	# write down the result
+#	var studentDivision = MILLENIUM_STUDENTS.slice(0,7)
+#	spawn_custom(studentDivision, milleniumTextures)
+	
+	# Valkyrie - 4
+#	var school = "valkyrie"
+#	spawn_custom(VALKYRIE_STUDENTS, valkyrieTextures)
+	
+	# Trinity - 25
+	var school = "trinity"
 	randomize()
-	GEHENNA_STUDENTS.shuffle()
-	print(GEHENNA_STUDENTS.slice(0,7),"\n",GEHENNA_STUDENTS.slice(8,15),"\n",GEHENNA_STUDENTS.slice(16,23))
+	TRINITY_STUDENTS.shuffle()
+	print(TRINITY_STUDENTS.slice(0,7),"\n",TRINITY_STUDENTS.slice(8,15),"\n",TRINITY_STUDENTS.slice(16,24))
 	# write down the result
-	var studentDivision = GEHENNA_STUDENTS.slice(0,7)
-	spawn_custom(studentDivision, gehennaTextures)
+	var studentDivision = TRINITY_STUDENTS.slice(0,7)
+	spawn_custom(studentDivision, trinityTextures)
 	
 	
 	##### only for custom cross-school races or 2nd semifinals (ctrl-K) #####
