@@ -102,25 +102,45 @@ func spawn_custom(studentList: Array, textureList: Dictionary):
 		spawn_player(startSpawnsQty[studentList.size()][i], load(textureList[studentList[i]]))
 
 func _ready():
+	var abydosTextures = getOneSchoolTextures(ABYDOS_STUDENTS, "abydos")
+	var gehennaTextures = getOneSchoolTextures(GEHENNA_STUDENTS, "gehenna")
+	var _allTextures = [abydosTextures, gehennaTextures]
+	
 	# Abydos
 	#spawn_abydos_school()
 	
-	#var abydosTextures = getOneSchoolTextures(ABYDOS_STUDENTS, "abydos")
+	# Abydos
+	#var school = "abydos"
 	#spawn_custom(ABYDOS_STUDENTS, abydosTextures)
 	
-	# Change accordingly
-	var studentsList = ["Serika", "Hoshino", "Shiroko", "Nonomi", "Ayane", "Hina", "Satsuki", "Iori"] #
-	var school = "abydos"
+	# this only works for schools with little students like:
+	# abydos - valkyrie - arius - shanhaijing - srt
 	
+	# Gehenna
+	var school = "gehenna"
+	randomize()
+	GEHENNA_STUDENTS.shuffle()
+	print(GEHENNA_STUDENTS.slice(0,7),"\n",GEHENNA_STUDENTS.slice(8,15),"\n",GEHENNA_STUDENTS.slice(16,23))
+	# write down the result
+	var studentDivision = GEHENNA_STUDENTS.slice(0,7)
+	spawn_custom(studentDivision, gehennaTextures)
+	
+	
+	##### only for custom cross-school races or 2nd semifinals (ctrl-K) #####
+	
+#	# Change accordingly
+#	var studentsList = ["Serika", "Hoshino", "Shiroko", "Nonomi", "Ayane", "Hina", "Satsuki", "Iori"]
+#	var school = "abydos" # Can be empty if cross-school ""
+#
+#	# Generic
+#	var textures = getTextures(studentsList, _allTextures)
+#	spawn_custom(studentsList, textures)
+	
+	##### only for custom cross-school races or 2nd semifinals (ctrl-K) #####
+	
+	
+	Global.school = school
 	getBorders(school)
-	
-	var xabydosTextures = getOneSchoolTextures(ABYDOS_STUDENTS, "abydos")
-	var xgehennaTextures = getOneSchoolTextures(GEHENNA_STUDENTS, "gehenna")
-	var allTextures = [xabydosTextures, xgehennaTextures]
-	var textures = getTextures(studentsList, allTextures)
-	
-	# Generic
-	spawn_custom(studentsList, textures)
 	
 	var position = get_tree().get_nodes_in_group("players").size()
 	# Load coresponding starter platforms depending on "players" group size
