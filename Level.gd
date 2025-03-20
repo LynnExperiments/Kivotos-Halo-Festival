@@ -13,6 +13,16 @@ var TRINITY_STUDENTS = ["Nagisa", "Seia", "Mika", "Kazusa", "Natsu", "Airi",
 "Yoshimi", "Reisa", "Suzumi", "Tsurugi", "Hasumi", "Mashiro", "Ichika", "Mine", 
 "Hanae", "Serina", "Hifumi", "Azusa", "Koharu", "Hanako", "Ui", "Shimiko",
  "Sakurako", "Mari", "Hinata"]
+var HYAKKIYAKO_STUDENTS = ["Kaho", "Chise", "Tsubaki", "Mimori", "Kaede",
+"Renge", "Kikyou", "Yukari", "Shizuko", "Pina", "Umika", "Michiru", "Izuna",
+"Tsukuyo", "Wakamo", "Niya", "Nagusa", "Arata", "Kokuriko", "Shuro", "Kuzunoha"]
+var ARIUS_STUDENTS = ["Saori", "Misaki", "Hiyori", "Atsuko"]
+var SHANHAIJING_STUDENTS = ["Kisaki", "Mina", "Shun", "Kokona", "Saya", "Rumi", 
+"Reijo", "Kai", "Kaguya"]
+var RED_WINTER_STUDENTS = ["Cherino", "Tomoe", "Marina", "Minori", "Meru", 
+"Momiji", "Nodoka", "Shigure", "Takane", "Yakumo"]
+var SRT_STUDENTS = ["Miyako", "Saki", "Miyu", "Moe", "Yukino", "Niko",
+"Kurumi", "Otogi"]
 
 const PLAYER_SCENE = preload("res://players/player2.tscn")
 const LEFT_BORDER = preload("res://environment/borders/b_left.tscn")
@@ -38,6 +48,7 @@ var startPlatforms = {
 	3: "res://environment/tileset/start_platform_scenes/3_players_platforms.tscn",
 	4: "res://environment/tileset/start_platform_scenes/4_players_platforms.tscn",
 	5: "res://environment/tileset/start_platform_scenes/5_players_platforms.tscn",
+	7: "res://environment/tileset/start_platform_scenes/7_players_platforms.tscn",
 	8: "res://environment/tileset/start_platform_scenes/8_players_platforms.tscn",
 	9: "res://environment/tileset/start_platform_scenes/9_players_platforms.tscn",
 	10:"res://environment/tileset/start_platform_scenes/10_players_platforms.tscn",
@@ -48,6 +59,7 @@ var startSpawnsQty = {
 	3: [spawnPositions[1],spawnPositions[4],spawnPositions[7]],
 	4: [spawnPositions[1],spawnPositions[3],spawnPositions[5],spawnPositions[7]],
 	5: [spawnPositions[0],spawnPositions[2],spawnPositions[4],spawnPositions[6],spawnPositions[8]],
+	7: [spawnPositions[2],spawnPositions[3],spawnPositions[4],spawnPositions[5],spawnPositions[6],spawnPositions[7],spawnPositions[8]],
 	8: [spawnPositions[1],spawnPositions[2],spawnPositions[3],spawnPositions[4],spawnPositions[5],spawnPositions[6],spawnPositions[7],spawnPositions[8]],
 	9: [spawnPositions[0],spawnPositions[1],spawnPositions[2],spawnPositions[3],spawnPositions[4],spawnPositions[5],spawnPositions[6],spawnPositions[7],spawnPositions[8]],
 	10:[spawnPositions[0],spawnPositions[1],spawnPositions[2],spawnPositions[3],spawnPositions[4],spawnPositions[5],spawnPositions[6],spawnPositions[7],spawnPositions[8],spawnPositions[9]],
@@ -103,8 +115,15 @@ func _ready():
 	var milleniumTextures = getOneSchoolTextures(MILLENIUM_STUDENTS, "millenium")
 	var valkyrieTextures = getOneSchoolTextures(VALKYRIE_STUDENTS, "valkyrie")
 	var trinityTextures = getOneSchoolTextures(TRINITY_STUDENTS, "trinity")
+	var hyakkiyakoTextures = getOneSchoolTextures(HYAKKIYAKO_STUDENTS, "hyakkiyako")
+	var ariusTextures = getOneSchoolTextures(ARIUS_STUDENTS, "arius")
+	var shanhaijingTextures = getOneSchoolTextures(SHANHAIJING_STUDENTS, "shanhaijing")
+	var red_winterTextures = getOneSchoolTextures(RED_WINTER_STUDENTS, "red_winter")
+	var srtTextures = getOneSchoolTextures(SRT_STUDENTS, "srt")
+	
 	var _allTextures = [abydosTextures, gehennaTextures, milleniumTextures, 
-	valkyrieTextures, trinityTextures]
+	valkyrieTextures, trinityTextures, hyakkiyakoTextures, ariusTextures, 
+	shanhaijingTextures, red_winterTextures, srtTextures]
 	
 	# Abydos - 5
 	#var school = "abydos"
@@ -133,14 +152,43 @@ func _ready():
 #	spawn_custom(VALKYRIE_STUDENTS, valkyrieTextures)
 	
 	# Trinity - 25
-	var school = "trinity"
-	randomize()
-	TRINITY_STUDENTS.shuffle()
-	print(TRINITY_STUDENTS.slice(0,7),"\n",TRINITY_STUDENTS.slice(8,15),"\n",TRINITY_STUDENTS.slice(16,24))
-	# write down the result
-	var studentDivision = TRINITY_STUDENTS.slice(0,7)
-	spawn_custom(studentDivision, trinityTextures)
+#	var school = "trinity"
+#	randomize()
+#	TRINITY_STUDENTS.shuffle()
+#	print(TRINITY_STUDENTS.slice(0,7),"\n",TRINITY_STUDENTS.slice(8,15),"\n",TRINITY_STUDENTS.slice(16,24))
+#	# write down the result
+#	var studentDivision = TRINITY_STUDENTS.slice(0,7)
+#	spawn_custom(studentDivision, trinityTextures)
+
+	# Hyakkiyako - 21
+#	var school = "hyakkiyako"
+#	randomize()
+#	HYAKKIYAKO_STUDENTS.shuffle()
+#	print(HYAKKIYAKO_STUDENTS.slice(0,6),"\n",HYAKKIYAKO_STUDENTS.slice(7,13),"\n",HYAKKIYAKO_STUDENTS.slice(14,20))
+#	# write down the result
+#	var studentDivision = HYAKKIYAKO_STUDENTS.slice(0,6)
+#	spawn_custom(studentDivision, hyakkiyakoTextures)
 	
+	# Arius - 4
+#	var school = "arius"
+#	spawn_custom(ARIUS_STUDENTS, ariusTextures)
+	
+	# Shanhaijing - 9
+#	var school = "shanhaijing"
+#	spawn_custom(SHANHAIJING_STUDENTS, shanhaijingTextures)
+	
+	# Red Winter - 10
+#	var school = "red_winter"
+#	randomize()
+#	RED_WINTER_STUDENTS.shuffle()
+#	print(RED_WINTER_STUDENTS.slice(0,4),"\n",RED_WINTER_STUDENTS.slice(5,9))
+#	# write down the result
+#	var studentDivision = RED_WINTER_STUDENTS.slice(0,4)
+#	spawn_custom(studentDivision, red_winterTextures)
+	
+	# SRT - 8
+	var school = "srt"
+	spawn_custom(SRT_STUDENTS, srtTextures)
 	
 	##### only for custom cross-school races or 2nd semifinals (ctrl-K) #####
 	

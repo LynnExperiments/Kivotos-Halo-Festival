@@ -14,7 +14,8 @@ func _process(delta):
 	$Minutes.text = "%02d:" % minutes
 	$Seconds.text = "%02d." % seconds
 	$Miliseconds.text = "%03d" % msec
-	mainText = Global.school + " semifinals"
+	var formattedSchool = Global.school.replace("_", " ")
+	mainText = formattedSchool + " semifinals"
 	$MainText.text = mainText
 	if(Global.school.length() > 0):
 		$MainText.add_color_override("font_color", Color(Global.schools_colors[Global.school]))
