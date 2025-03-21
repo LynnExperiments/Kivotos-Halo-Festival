@@ -28,9 +28,6 @@ func _ready():
 		markers[item] = new_marker
 
 func _process(_delta):
-	if !player:
-		return
-	player_marker.rotation = get_node(player).rotation + PI/2
 	for item in markers:
 		var obj_pos = (item.position) * 0.15 + Vector2(0,-53)
 		obj_pos.x = (item.position.x) / 4.08

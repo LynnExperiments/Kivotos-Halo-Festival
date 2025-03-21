@@ -126,8 +126,8 @@ func _ready():
 	shanhaijingTextures, red_winterTextures, srtTextures]
 	
 	# Abydos - 5
-	#var school = "abydos"
-	#spawn_custom(ABYDOS_STUDENTS, abydosTextures)
+	var school = "abydos"
+	spawn_custom(ABYDOS_STUDENTS, abydosTextures)
 	
 	# Gehenna - 24
 #	var school = "gehenna"
@@ -187,8 +187,8 @@ func _ready():
 #	spawn_custom(studentDivision, red_winterTextures)
 	
 	# SRT - 8
-	var school = "srt"
-	spawn_custom(SRT_STUDENTS, srtTextures)
+#	var school = "srt"
+#	spawn_custom(SRT_STUDENTS, srtTextures)
 	
 	##### only for custom cross-school races or 2nd semifinals (ctrl-K) #####
 	
